@@ -28,11 +28,20 @@ const PortofolioContainer = styled.section`
   h2{
     text-align: start;
   }
+  &:hover {
+    transform: translateX(0);
+  }
 `;
 
+const ImageContainer = styled.div`
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    max-width: 300px;
+`
 
 const Image = styled.img`
-    width: 300px;
+    width: 100%;
     height: 100%;
     max-height: 180px;
     cursor: pointer;
@@ -75,16 +84,16 @@ const SectionOne = styled.div`
     box-shadow: 0px 3px 6px #0000001c;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     div{
-        text-align: center;
+        text-align: left;
         padding: 10px;
+        width: 100%;
     }
     @media (max-width: 800px) {
     flex-direction: column;
     padding-top: 35px;
-    overflow: hidden;
   }
 `
 
@@ -101,6 +110,8 @@ const Links = styled.div`
     display: flex;
     gap: 25px;
     justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
 `
 
 
@@ -139,7 +150,9 @@ const PortofolioSection2 = ({isVisible}) => {
             <Wrapper>
                 <SectionContainerOne>
                 <SectionOne>
-                    <Image src={semesterProjectImages[4]} onClick={() => handleOpen("semester")}/>
+                    <ImageContainer>
+                        <Image src={semesterProjectImages[4]} onClick={() => handleOpen("semester")}/>
+                    </ImageContainer>
                     <div>
                         <h3>Semester Project 2 - Auction House</h3>
                             <p>
@@ -156,7 +169,10 @@ const PortofolioSection2 = ({isVisible}) => {
 
                 <SectionContainerOne>
                 <SectionTwo>
-                    <Image src={jsFrameworkImages[0]} onClick={() => handleOpen("framWork")}/>
+                    <ImageContainer>
+                        <Image src={jsFrameworkImages[0]} onClick={() => handleOpen("framWork")}/>
+
+                    </ImageContainer>
                     <div>
                         <h3>JavaScript Frameworks Course Assignment</h3>
                             <p>
@@ -175,7 +191,9 @@ const PortofolioSection2 = ({isVisible}) => {
 
                 <SectionContainerOne>
                 <SectionThree>
-                    <Image src={projectExamImages[0]} onClick={() => handleOpen("exam")}/>
+                    <ImageContainer>
+                        <Image src={projectExamImages[0]} onClick={() => handleOpen("exam")}/>
+                    </ImageContainer>
                     <div>
                         <h3>Project Exam - 2</h3>
                          <p>This is my project Exam and it is a React-based web application designed to showcase a modern, scalable, and responsive UI/UX design. Utilizing a comprehensive stack including React 18, Styled Components, React Hook Form, Zustand for state management, and Vite as the build tool, this project aims to deliver a seamless and efficient user experience.</p>                       

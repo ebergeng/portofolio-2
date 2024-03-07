@@ -35,6 +35,9 @@ const SkillsContainer = styled.section`
   border-radius: 0 0 0 50px;
   transform: ${({ isVisible }) => isVisible ? 'translateX(0)' : 'translateX(65%)'};
   transition: transform 0.5s ease-out;
+  &:hover {
+    transform: translateX(0);
+  }
 `;
 
 

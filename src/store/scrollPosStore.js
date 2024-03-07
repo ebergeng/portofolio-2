@@ -2,7 +2,7 @@ import {create} from "zustand"
 
 export const useScrollPosStore = create((set) => ({
     navPos: "me",
-    me: false,
+    me: true,
     skills: false,
     firstYear: false,
     secondYear: false,

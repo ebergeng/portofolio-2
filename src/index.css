@@ -7,4 +7,5 @@ body {
   min-height: 100vh;
   background: linear-gradient(95deg, #3a3a3a, #cccccc);
   font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
 }

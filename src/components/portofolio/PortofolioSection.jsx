@@ -26,11 +26,22 @@ const PortofolioContainer = styled.section`
   h2 {
     text-align: end;
   }
+
+  &:hover {
+    transform: translateX(0);
+  }
 `;
 
 
+const ImageContainer = styled.div`
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    max-width: 300px;
+`
+
 const Image = styled.img`
-    width: 300px;
+    width: 100%;
     height: 100%;
     max-height: 180px;
     cursor: pointer;
@@ -53,14 +64,9 @@ const Wrapper = styled.div`
 
 const Section = styled.div`
     width: 100%; 
-    
-    
     display: flex;
     flex-direction: row;
-
     gap: 25px;
-
-
 `
 const SectionContainerOne = styled(Section)`
     justify-content: start;
@@ -76,11 +82,12 @@ const SectionOne = styled.div`
     background-color: white;
     box-shadow: 0px 3px 6px #0000001c;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     div{
-        text-align: center;
+        text-align: left;
         padding: 10px;
+        width: 100%;
     }
     @media (max-width: 800px) {
     flex-direction: column;
@@ -118,17 +125,13 @@ const PortofolioSection = ({isVisible}) => {
 
     function handleOpen(type) {
         if(type === "exam") {
-            setLib(peOneImage)
-            
+            setLib(peOneImage)   
         }else if(type === "framWork") {
             setLib(spOneImages)
         }else if(type === "semester") {
             setLib(htmlCssImages)
         }
-
-
         openModal()
-
     }
 
   return (
@@ -138,25 +141,31 @@ const PortofolioSection = ({isVisible}) => {
             <h2>Portofolio First Year</h2>
             <Wrapper>
                 <SectionContainerOne>
-                <SectionOne>
-                    <Image src={htmlCssImages[0]} onClick={() => handleOpen("semester")}/>
-                    <div>
-                        <h3>HTML & CSS Ca</h3>
-                            <p>
-                                My first webpage built with only html, css and js.
-                            </p>
-                            <Links>
-                            <p>Link to: <a href="https://github.com/ebergeng/RainyDays">GitHub Repo</a></p>
-                            <p>Link to: <a href="https://velvety-blini-002fa1.netlify.app/contact">Site</a></p>
-                            </Links>              
-                    </div>
-              
-                </SectionOne>
+                    <SectionOne>
+                        <ImageContainer>
+                            <Image src={htmlCssImages[0]} onClick={() => handleOpen("semester")}/>
+                        </ImageContainer>
+                        
+                        <div>
+                            <h3>HTML & CSS Ca</h3>
+                                <p>
+                                    My first webpage built with only html, css and js.
+                                </p>
+                                <Links>
+                                <p>Link to: <a href="https://github.com/ebergeng/RainyDays">GitHub Repo</a></p>
+                                <p>Link to: <a href="https://velvety-blini-002fa1.netlify.app/contact">Site</a></p>
+                                </Links>              
+                        </div>
+                
+                    </SectionOne>
                 </SectionContainerOne>
 
                 <SectionContainerOne>
                 <SectionTwo>
+                    <ImageContainer>
                     <Image src={spOneImages[0]} onClick={() => handleOpen("framWork")}/>
+                    </ImageContainer>
+                    
                     <div>
                         <h3>Semester Project - 1</h3>
                             <p>
@@ -174,7 +183,10 @@ const PortofolioSection = ({isVisible}) => {
 
                 <SectionContainerOne>
                 <SectionThree>
-                    <Image src={peOneImage[0]} onClick={() => handleOpen("exam")}/>
+                    <ImageContainer>
+                        <Image src={peOneImage[0]} onClick={() => handleOpen("exam")}/>
+                    </ImageContainer>
+                    
                     <div>
                         <h3>Project Exam - 1</h3>
                          <p>A blogpage built with HTML, CSS, JS and uses wordpress as a headless CMS. It uses a wordpress api call to catch posts from a wordpress DB. All the posts in this sites are createt and stored on a wordpress page.</p>
